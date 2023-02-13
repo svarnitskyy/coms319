@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+    <title>CSS Values and Units</title>
+    <style>
+        .wrapper {
+            font-size: 1em;
+        }
+        .px {
+            width: 200px;
+            background-color: powderblue;
+        }
+        .vw {
+            width: 10vw;
+            background-color: green;
+        }
+        .em {
+            width: 10em;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="example">HELLO</h1>
+    <div class="wrapper">
+        <div class="px">I am 200px wide</div>
+        <div class="vw">I am 10vw wide</div>
+        <div class="em">I am 10em wide</div>
+    </div>
+
+    <h3>Explanation :</h3>
+    <ul>
+        <li><p>The element <span style="background-color: powderblue;">200px</span> wide is fixed even we shrink the page from left to right.</p></li>
+        <li><p>While the <span style="background-color: green;">10vw wide</span> element is relative to the wide of the web page (viewport) and it is possible see how change when we change the page wide.</p></li>
+        <li><p>Finally, the<span style="background-color: yellow;">10em wide</span> element is relative to the wide of <strong>div</strong> which is also relative to the <strong>HTML</strong> document wich is at 100. Because HTML does not change, div also does not change and the 10em wide behave fixed.</p></li>
+    </ul>
+</body>
+</html>
