@@ -53,10 +53,10 @@ Price : ${minProduct_Array[3]}`);
 
 //Exercise 2 
 
-function minPrice_usingObject(minProduct_Object, products){
+function minPrice_usingObject(minProduct_Object, products) {
     let minPrice = 99999999;
-    for(let product of products){
-        if(product[6] < minPrice){
+    for (let product of products) {
+        if (product[6] < minPrice) {
             minProduct_Object.minProductId = product[0]; //product ID
             minProduct_Object.minProductName = product[1]; //product name
             minProduct_Object.shortDescription = product[4]; //short description
@@ -85,12 +85,44 @@ Description  : ${minProduct_Object["shortDescription"]}
 Price : ${minProduct_Object["price"]}`);
 
 //Exerise 3
-
 // product_name : value
 let sales_per_product_name = {};
+
+function per_product(sales_per_product_name, products){
+    var ceilingFan = 0;
+    var ceilingFanPrice = 0;
+    var wallLight = 0;
+    var wallLightPrice = 0;
+    var jacket = 0;
+    var jacketPrice = 0;
+    for (let product of products) {
+        if (sales_per_product_name.hasOwnProperty(product[1])) {
+            sales_per_product_name[product[1]] = Number(sales_per_product_name[product[1]]) + Number(product[6]);
+        }
+        else {
+            sales_per_product_name[product[1]] = Number(product[6]);
+        }
+
+    }
+}
+
+
+
 // call the function :
-per_product(sales_per_product_name,products);
+per_product(sales_per_product_name, products);
 
 console.log(`Report Sales per Product Name :`);
 for (let name in sales_per_product_name)
-console.log(`Product Name : ${name} Sales : ${sales_per_product_name[name]}`);
+    console.log(`Product Name : ${name} Sales : ${sales_per_product_name[name]}`);
+
+
+
+// let add = function(a, b){
+//     return a + b;
+// }
+
+// let add = (a, b) => {
+//     return a + b;
+// }
+
+// let add = (a, b) => a + b;
